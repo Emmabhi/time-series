@@ -1,0 +1,66 @@
+1. Holt’s Linear Trend Model---
+It is an extension of simple exponential smoothing to allow forecasting of data with a trend.
+This method takes into account the trend of the dataset. The forecast function in this method is a function of level and trend.
+
+
+2. Simple Exponential Smoothing---
+In this technique, we assign larger weights to more recent observations than to observations from the distant past.
+The weights decrease exponentially as observations come from further in the past, the smallest weights are associated with the oldest observations.
+
+
+
+3. Moving Average---
+In this technique, we will take the average of the passenger counts for the last few time periods only. use rolling.
+
+
+4. Naive Approach---
+In this forecasting technique, we assume that the next expected point is equal to the last observed point. So we can expect a straight horizontal line as the prediction.
+
+
+
+
+Analytical Problem Framing - > 
+
+Time horizon is defined as the period of time for which we are forecasting data. 
+
+
+
+Forecast granularity is defined as the time dimension in which the data is formatted for the forecast, e.g. weekly, monthly or annual.
+
+
+Product hierarchy is important to understand before starting a forecasting analysis on data.
+
+
+EDTA - >
+
+seasonality refers to the presence of variations which occur at certain regular intervals either on a weekly basis, monthly basis, or even quarterly (but never up to a year).
+
+Feature engineering --  date time features, lag features and rolling window statistics, outlier detection and identifying missing values, train-test, differencing(d), moving average(acf)(q), auto regressive(pacf)(p).
+
+
+choosing model - >
+
+
+
+Stationary data is defined as having a constant variance and mean over time. You can run an Augmented Dickey-Fuller (ADF) test to check this statistically, but you can also see it visually when plotting the data over time. To achieve stationarity, use the difference between observations at time t and t-1 instead of the observation at time t.
+
+
+seasonality of the data by decomposing your time series data, you will identify the trend, seasonal patterns and residuals of the data. The most common method is the classical seasonal decomposition method but there are also others (e.g. X11 decomposition, SEATS decomposition).
+
+
+
+linearity - BDS test, when applied on residuals from the linear model, can detect a presence of omitted non-linear structure. However, just like with classical regression analysis, non-linearity of the data can be omitted by the transformation of the forecast or predictor variables (e.g. log()). Additionally, piece-wise linear analysis can be performed if non-linear data can be divided into linear periods.
+
+
+seasonality - no(ARIMA,garch)   yes(SARIMA,n-beats)
+
+stationary - yes(seasonality)   no(linear)
+
+linear - yes(random forest, esemble , prophet, rnn , arch , star)   no(seasonality)
+
+
+
+
+
+
+
